@@ -16,11 +16,9 @@ namespace ATBaigiamasisDarbas.Page
         private IWebElement _searchInput => Driver.FindElement(By.CssSelector("#main-search-input")); // CssSelector "#main-search-input" ar Id("main-search-input")
 
         private IWebElement _searchSubmitButton => Driver.FindElement(By.Id("main-search-submit"));
+        private IReadOnlyCollection<IWebElement> _submitCartButtons => Driver.FindElements(By.ClassName("addToCart-container"));
 
-        private IWebElement _searchActualResult => Driver.FindElement(By.CssSelector("#middle_blocks > li > h2 > span:nth-child(1)")); // Ieskojote: atsakymas
-        private IReadOnlyCollection<IWebElement> _addToCartButton => Driver.FindElements(By.ClassName("addToCart-container"));
-
-        private IReadOnlyCollection<IWebElement> _searchResults = Driver.FindElements(By.ClassName("item-info-container"));
+        private IReadOnlyCollection<IWebElement> _actualSearchResults = Driver.FindElements(By.ClassName("item-info-container"));
 
         public ERutaSearchPage(IWebDriver webDriver) : base(webDriver) { }
 
@@ -36,22 +34,22 @@ namespace ATBaigiamasisDarbas.Page
         {
             _searchSubmitButton.Click();
         }
-        public void VerifySearchResult(string expectedResult)
-        {
-            Assert.AreEqual(expectedResult, _searchActualResult.Text, "Name is wrong!");
-        }
-
-
-        /*
-         * public void VerifySearchActualResults(string expectedResult)
-        {
-            IList<IWebElement> _searchResults = _searchResults
-
-            foreach (IWebElement item in )
+        
+         public void VerifySearchActualResults(string expectedResult)
+        { 
+           foreach (IWebElement actualSearchResult in _actualSearchResults)
             {
-                Assert.IsTrue(expectedResult.Contains(item.Text), "Serched wrong goods");
+                Assert.IsTrue(actualSearchResult.Text.Contains(expectedResult), "The search found wrong goods");
+            }
+               
+        }
+        public void AddGoodsInToShoppingCart()
+        {
+            foreach (IWebElement submitCartButton in _submitCartButtons)
+            {
+                _submitCartButtons.First().Click;
             }
         }
-        */
+        
     }
 }

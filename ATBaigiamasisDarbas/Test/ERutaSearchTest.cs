@@ -10,17 +10,18 @@ namespace ATBaigiamasisDarbas.Test
 {
     class ERutaSearchTest : BaseTest
     {
-        [Test]
+        [TestCase("zara", "žara", TestName = "Find 'zara'")]
+        [TestCase("marmurine", "marmurinė", TestName = "Find 'marmurine'")]
+        [TestCase("agrastai", "agrastai", TestName = "Find 'agrastai'")]
 
-        public static void TestSearchField()
+
+        public static void TestSearchField(string searchText, string expectedResult)
+
         {
-            string searchText = "zara";
-            string expectedResult = "zara";
-
             _eRutaSearchPage.NavigateToDefaultPage();
             _eRutaSearchPage.InsertTextToSerchField(searchText);
             _eRutaSearchPage.ClickSearchSubmitButton();
-            _eRutaSearchPage.VerifySearchResult(expectedResult);
+            _eRutaSearchPage.VerifySearchActualResults(expectedResult);
         }
     }
 }
