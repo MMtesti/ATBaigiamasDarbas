@@ -18,7 +18,7 @@ namespace ATBaigiamasisDarbas.Page
         private IWebElement _searchSubmitButton => Driver.FindElement(By.Id("main-search-submit"));
         private IReadOnlyCollection<IWebElement> _submitCartButtons => Driver.FindElements(By.ClassName("addToCart-container"));
 
-        private IReadOnlyCollection<IWebElement> _actualSearchResults = Driver.FindElements(By.ClassName("item-info-container"));
+        private IReadOnlyCollection<IWebElement> _actualSearchResults => Driver.FindElements(By.ClassName("item-info-container"));
 
         public ERutaSearchPage(IWebDriver webDriver) : base(webDriver) { }
 
@@ -45,10 +45,7 @@ namespace ATBaigiamasisDarbas.Page
         }
         public void AddGoodsInToShoppingCart()
         {
-            foreach (IWebElement submitCartButton in _submitCartButtons)
-            {
-                _submitCartButtons.First().Click;
-            }
+            _submitCartButtons.First().Click();
         }
         
     }
