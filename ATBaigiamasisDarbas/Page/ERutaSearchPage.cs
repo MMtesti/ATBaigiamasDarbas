@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,9 @@ namespace ATBaigiamasisDarbas.Page
         }
         public void AddFirstItemInToShoppingCart()
         {
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+         //   wait.Until(_submitCartButtons.
+
             _submitCartButtons.First().Click();
         }
         
