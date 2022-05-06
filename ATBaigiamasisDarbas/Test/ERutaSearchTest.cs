@@ -10,7 +10,7 @@ namespace ATBaigiamasisDarbas.Test
 {
     class ERutaSearchTest : BaseTest
     {
-        [TestCase("zara", "žara", TestName = "Find 'zara'")]
+        [TestCase("zele", "želė", TestName = "Find 'zele'")]
         [TestCase("marmurine", "marmurinė", TestName = "Find 'marmurine'")]
         [TestCase("agrastai", "agrastai", TestName = "Find 'agrastai'")]
 

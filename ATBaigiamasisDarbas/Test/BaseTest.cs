@@ -38,6 +38,8 @@ namespace ATBaigiamasisDarbas.Test
         {
             Driver.Quit();
         }
+
+        [TearDown]
         public static void TearDown()
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
