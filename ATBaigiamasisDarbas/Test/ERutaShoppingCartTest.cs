@@ -12,11 +12,14 @@ namespace ATBaigiamasisDarbas.Test
     {
         [Test]
         
-        public static void TestSearchAndShoppingCartFunction(string searchText)
+        public static void TestSearchAndShoppingCartFunction()
         {
-            _eRutaShoppingCartPage.NavigateToDefaultPage();
+            string searchText = "zele";
+            _eRutaSearchPage.NavigateToDefaultPage();
             _eRutaSearchPage.InsertTextToSerchField(searchText);
-
+            _eRutaSearchPage.ClickSearchSubmitButton();
+            _eRutaSearchPage.AcceptAlert();
+            _eRutaSearchPage.AddFirstItemInToShoppingCart();
 
         }
     }

@@ -31,6 +31,7 @@ namespace ATBaigiamasisDarbas.Test
             _eRutaPage = new ERutaPage(Driver);
             _eRutaSearchPage = new ERutaSearchPage(Driver);
             _eRutaShoppingCartPage = new ERutaShoppingCartPage(Driver);
+
         }
 
         [OneTimeTearDown]

@@ -35,6 +35,7 @@ namespace ATBaigiamasisDarbas.Drivers
                     webDriver = new ChromeDriver();
                     break;
             }
+
             webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             webDriver.Manage().Window.Maximize();
 

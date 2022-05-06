@@ -23,5 +23,6 @@ namespace ATBaigiamasisDarbas.Test
             _eRutaSearchPage.ClickSearchSubmitButton();
             _eRutaSearchPage.VerifySearchActualResults(expectedResult);
         }
+
     }
 }
