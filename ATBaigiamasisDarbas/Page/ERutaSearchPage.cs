@@ -15,7 +15,7 @@ namespace ATBaigiamasisDarbas.Page
 
         private IWebElement _searchInput => Driver.FindElement(By.CssSelector("#main-search-input"));
         private IWebElement _searchSubmitButton => Driver.FindElement(By.Id("main-search-submit"));
-        private IReadOnlyCollection<IWebElement> _submitCartButtons => Driver.FindElements(By.ClassName("addToCart-container"));
+        private IReadOnlyCollection<IWebElement> _submitCartButtons => Driver.FindElements(By.ClassName("item-price-cart-container"));
         private IReadOnlyCollection<IWebElement> _actualSearchResults => Driver.FindElements(By.ClassName("item-info-container"));
         private IWebElement _alertMessageDismissButton => Driver.FindElement(By.CssSelector("#template_body_col_2_left > div.cc-window.cc-banner.cc-type-info.cc-theme-block.cc-bottom.cc-color-override--575221361 > div > a"));
         public ERutaSearchPage(IWebDriver webDriver) : base(webDriver) { }
@@ -48,9 +48,6 @@ namespace ATBaigiamasisDarbas.Page
         }
         public void AddFirstItemInToShoppingCart()
         {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
-         //   wait.Until(_submitCartButtons.
-
             _submitCartButtons.First().Click();
         }
         
