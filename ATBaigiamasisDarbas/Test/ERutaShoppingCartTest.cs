@@ -16,6 +16,7 @@ namespace ATBaigiamasisDarbas.Test
         {
             string searchText = "zele";
             _eRutaSearchPage.NavigateToDefaultPage();
+            _eRutaSearchPage.SwitchToFrame();
             _eRutaSearchPage.InsertTextToSerchField(searchText);
             _eRutaSearchPage.ClickSearchSubmitButton();
             _eRutaSearchPage.AcceptAlert();

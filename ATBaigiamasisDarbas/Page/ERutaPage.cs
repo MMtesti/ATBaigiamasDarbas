@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace ATBaigiamasisDarbas.Page
         private IWebElement _emailInput => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > div:nth-child(1) > input"));
         private IWebElement _passwordInput => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > div:nth-child(2) > input"));
         private IWebElement _submitButton => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > a.reg-btn.fl.btn1.submit-button.a0.mt15 > strong"));
-
+        private IWebElement _actualSuccessLogIn => Driver.FindElement(By.Id("account_on"));
         public ERutaPage(IWebDriver webDriver) : base(webDriver) { }
 
         public void NavigateToDefaultPage()
@@ -37,6 +38,11 @@ namespace ATBaigiamasisDarbas.Page
         public void ClickSubmitButton()
         {
             _submitButton.Click();
+        }
+        
+        public void VerifySuccessLogIn(string expectedResult)
+        {
+            Assert.IsTrue(_actualSuccessLogIn.Text.ToLower().Contains(expectedResult));
         }
     }
 }

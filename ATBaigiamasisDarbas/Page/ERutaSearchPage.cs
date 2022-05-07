@@ -24,6 +24,10 @@ namespace ATBaigiamasisDarbas.Page
         {
             Driver.Url = PageAddress;
         }
+        public void SwitchToFrame()
+        {
+            Driver.SwitchTo().Frame(0);
+        }
 
         public void InsertTextToSerchField(string searchText)
         {
@@ -44,7 +48,7 @@ namespace ATBaigiamasisDarbas.Page
         }
         public void AcceptAlert()
         {
-            _alertMessageDismissButton.Click();
+           _alertMessageDismissButton.Click();
         }
         public void AddFirstItemInToShoppingCart()
         {
