@@ -17,6 +17,7 @@ namespace ATBaigiamasisDarbas.Test
             string password = "smaliziai123";
             string expectedResult = "kumi";
             _eRutaPage.NavigateToDefaultPage();
+            _eRutaPage.AcceptAlert();
             _eRutaPage.ClickLogInButton();
             _eRutaPage.InsertTextToEmailField(email);
             _eRutaPage.InsertTextToPasswordField(password);

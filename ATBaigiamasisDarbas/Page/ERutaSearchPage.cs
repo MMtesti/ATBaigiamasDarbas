@@ -13,9 +13,9 @@ namespace ATBaigiamasisDarbas.Page
     {
         private const string PageAddress = "https://www.e-ruta.lt/paieska";
 
-        private IWebElement _searchInput => Driver.FindElement(By.CssSelector("#main-search-input"));
+        private IWebElement _searchInput => Driver.FindElement(By.Id("main-search-input"));
         private IWebElement _searchSubmitButton => Driver.FindElement(By.Id("main-search-submit"));
-        private IReadOnlyCollection<IWebElement> _submitCartButtons => Driver.FindElements(By.ClassName("item-price-cart-container"));
+        private IReadOnlyCollection<IWebElement> _submitCartButtons => Driver.FindElements(By.ClassName("addToCart-container"));
         private IReadOnlyCollection<IWebElement> _actualSearchResults => Driver.FindElements(By.ClassName("item-info-container"));
         private IWebElement _alertMessageDismissButton => Driver.FindElement(By.CssSelector("#template_body_col_2_left > div.cc-window.cc-banner.cc-type-info.cc-theme-block.cc-bottom.cc-color-override--575221361 > div > a"));
         public ERutaSearchPage(IWebDriver webDriver) : base(webDriver) { }
@@ -24,9 +24,10 @@ namespace ATBaigiamasisDarbas.Page
         {
             Driver.Url = PageAddress;
         }
-        public void SwitchToFrame()
+
+        public void AcceptAlert()
         {
-            Driver.SwitchTo().Frame(0);
+            _alertMessageDismissButton.Click();
         }
 
         public void InsertTextToSerchField(string searchText)
@@ -46,13 +47,14 @@ namespace ATBaigiamasisDarbas.Page
                 Assert.IsTrue(actualSearchResult.Text.ToLower().Contains(expectedResult), "The search found wrong goods");
             }    
         }
-        public void AcceptAlert()
-        {
-           _alertMessageDismissButton.Click();
-        }
+        
         public void AddFirstItemInToShoppingCart()
         {
-            _submitCartButtons.First().Click();
+            foreach (IWebElement submitCartButton in _submitCartButtons)
+            {
+                _submitCartButtons.First().Click();
+            }
+            
         }
         
     }
