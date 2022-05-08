@@ -15,7 +15,7 @@ namespace ATBaigiamasisDarbas.Page
 
         private IWebElement _searchInput => Driver.FindElement(By.Id("main-search-input"));
         private IWebElement _searchSubmitButton => Driver.FindElement(By.Id("main-search-submit"));
-        private IWebElement _cartButton => Driver.FindElement(By.CssSelector("#middle_blocks > li > div.product-list.flex > div.grid_12.flex-item.product.product-simple.product-972.item_hover_wrap_972.alpha.item-line-first.hover-item.cp.mb10.item.zi1.product-item.item-list > div > div > div.item-price-cart-container > div.addToCart-container > form > a > strong"));
+        private IReadOnlyCollection<IWebElement> _cartButtons => Driver.FindElements(By.CssSelector("a.pr.zitt.vv.addCart.btn1.a0.fl.mr5"));
         private IReadOnlyCollection<IWebElement> _actualSearchResults => Driver.FindElements(By.ClassName("item-info-container"));
         private IWebElement _alertMessageDismissButton => Driver.FindElement(By.CssSelector("#template_body_col_2_left > div.cc-window.cc-banner.cc-type-info.cc-theme-block.cc-bottom.cc-color-override--575221361 > div > a"));
         public ERutaSearchPage(IWebDriver webDriver) : base(webDriver) { }
@@ -48,16 +48,10 @@ namespace ATBaigiamasisDarbas.Page
             }    
         }
         
-        public void AddFirstItemInToShoppingCart()
+        public void AddFirstItemInToShoppingCart(int index)
         {
-          // foreach (IWebElement submitCartButton in _submitCartButtons)
-            {
-        //        _submitCartButtons.First().Click();
-            }
+                _cartButtons.ElementAt(index).Click();
         }
-        public void AddToCart()
-        {
-            _cartButton.Click();
-        }
+       
     }
 }

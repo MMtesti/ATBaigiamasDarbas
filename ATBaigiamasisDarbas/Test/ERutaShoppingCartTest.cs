@@ -16,12 +16,12 @@ namespace ATBaigiamasisDarbas.Test
         {
             string searchText = "zele";
             string expectedResult = "želė";
+            int index = 1;
             _eRutaSearchPage.NavigateToDefaultPage();
             _eRutaSearchPage.AcceptAlert();
             _eRutaSearchPage.InsertTextToSerchField(searchText);
             _eRutaSearchPage.ClickSearchSubmitButton();
-            //_eRutaSearchPage.AddFirstItemInToShoppingCart();
-            _eRutaSearchPage.AddToCart();
+            _eRutaSearchPage.AddFirstItemInToShoppingCart(index);
             _eRutaShoppingCartPage.ClickOnViewShoppingButton();
             _eRutaShoppingCartPage.VerifyShoppingCartInfo(expectedResult);
 
