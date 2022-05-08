@@ -19,8 +19,8 @@ namespace ATBaigiamasisDarbas.Test
             _eRutaSearchPage.AcceptAlert();
             _eRutaSearchPage.InsertTextToSerchField(searchText);
             _eRutaSearchPage.ClickSearchSubmitButton();
-            _eRutaSearchPage.AddFirstItemInToShoppingCart();
-            //_eRutaSearchPage.AddToCart();
+            //_eRutaSearchPage.AddFirstItemInToShoppingCart();
+            _eRutaSearchPage.AddToCart();
 
         }
     }
