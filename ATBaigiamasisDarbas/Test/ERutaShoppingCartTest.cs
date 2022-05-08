@@ -15,12 +15,15 @@ namespace ATBaigiamasisDarbas.Test
         public static void TestSearchAndShoppingCartFunction()
         {
             string searchText = "zele";
+            string expectedResult = "želė";
             _eRutaSearchPage.NavigateToDefaultPage();
             _eRutaSearchPage.AcceptAlert();
             _eRutaSearchPage.InsertTextToSerchField(searchText);
             _eRutaSearchPage.ClickSearchSubmitButton();
             //_eRutaSearchPage.AddFirstItemInToShoppingCart();
             _eRutaSearchPage.AddToCart();
+            _eRutaShoppingCartPage.ClickOnViewShoppingButton();
+            _eRutaShoppingCartPage.VerifyShoppingCartInfo(expectedResult);
 
         }
     }
