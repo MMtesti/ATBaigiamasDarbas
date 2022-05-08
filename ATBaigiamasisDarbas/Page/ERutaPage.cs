@@ -42,7 +42,7 @@ namespace ATBaigiamasisDarbas.Page
         
         public void VerifySuccessLogIn(string expectedResult)
         {
-            Assert.IsTrue(_actualSuccessLogIn.Text.ToLower().Contains(expectedResult));
+            Assert.IsTrue(_actualSuccessLogIn.Text.ToLower().Contains(expectedResult), "Wrong username or password");
         }
     }
 }
