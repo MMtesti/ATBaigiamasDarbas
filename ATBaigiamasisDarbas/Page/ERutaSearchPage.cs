@@ -39,7 +39,7 @@ namespace ATBaigiamasisDarbas.Page
         {
             foreach (IWebElement actualSearchResult in _actualSearchResults)
             {
-                Assert.IsTrue(actualSearchResult.Text.ToLower().Contains(expectedResult), "The search found wrong goods");
+                Assert.IsTrue(actualSearchResult.Text.ToLower().Contains(expectedResult), "Goods dont exist");
             }    
         }
         
