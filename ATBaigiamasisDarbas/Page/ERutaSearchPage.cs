@@ -24,12 +24,10 @@ namespace ATBaigiamasisDarbas.Page
         {
             Driver.Url = PageAddress;
         }
-
         public void AcceptAlert()
         {
-          _alertMessageDismissButton.Click();
+                _alertMessageDismissButton.Click();
         }
-
         public void InsertTextToSerchField(string searchText)
         {
             _searchInput.Clear();
