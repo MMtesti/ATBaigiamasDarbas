@@ -15,7 +15,7 @@ namespace ATBaigiamasisDarbas.Test
         public static void TestSearchAndShoppingCartFunction()
         {
             string searchText = "zele";
-            string expectedResult = "želė";
+            string expectedResult = "1953ZELE2";
             int index = 1;
             _eRutaSearchPage.NavigateToDefaultPage();
             _eRutaSearchPage.AcceptAlert();

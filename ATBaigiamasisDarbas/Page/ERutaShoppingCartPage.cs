@@ -14,10 +14,9 @@ namespace ATBaigiamasisDarbas.Page
     {
         private const string PageAddress = "https://www.e-ruta.lt/prekiu-krepselis";
 
-        private IWebElement _shoppingCart => Driver.FindElement(By.Id("cart-inner"));// prekiu krepselis
-        private IWebElement _cartValue => Driver.FindElement(By.XPath("/html/body/div[4]/div[1]/div[1]/div[1]/div/div[5]/div/div[1]/text()"));// krepselis tuscias
+        private IWebElement _shoppingCart => Driver.FindElement(By.Id("cart-link"));
         private IWebElement _alertMessageDismissButton => Driver.FindElement(By.CssSelector("#template_body_col_2_left > div.cc-window.cc-banner.cc-type-info.cc-theme-block.cc-bottom.cc-color-override--575221361 > div > a"));
-        private IWebElement _ShoppingCartActualResult => Driver.FindElement(By.CssSelector("#cart_form > div > table > tbody > tr:nth-child(4) > td.grid-29.prefix_1.pt5.pb5.hidden-xs > a"));
+        private IWebElement _ShoppingCartActualResult => Driver.FindElement(By.CssSelector("td.grid-29.prefix_1.pt5.pb5.hidden-xs"));
         public ERutaShoppingCartPage(IWebDriver webDriver) : base(webDriver) { }
 
         public void NavigateToDefaultPage()
@@ -28,22 +27,14 @@ namespace ATBaigiamasisDarbas.Page
         {
             _alertMessageDismissButton.Click();
         }
-       // public void WaitUntilShoppingCartDisplayed()
-
-        //{
-       //     WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
-       //     wait.Until(e => e.FindElement(By.Id("cart-inner")));
-        //}
 
         public void ClickOnViewShoppingButton()
         {
-            Actions action = new Actions(Driver);
-            action.MoveToElement(_shoppingCart).Build().Perform();
             _shoppingCart.Click();
         }
         public void VerifyShoppingCartInfo(string expectedResult)
         {
-            Assert.IsTrue(_ShoppingCartActualResult.Text.ToLower().Contains(expectedResult), "Wrong");
+            Assert.IsTrue(_ShoppingCartActualResult.Text.Contains(expectedResult), "Wrong");
         }
     }
 }
