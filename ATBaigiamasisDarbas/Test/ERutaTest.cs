@@ -17,6 +17,7 @@ namespace ATBaigiamasisDarbas.Test
             _eRutaPage.InsertTextToPasswordField(password);
             _eRutaPage.ClickSubmitButton();
             _eRutaPage.VerifySuccessLogIn(expectedResult);
+            _eRutaPage.ClickLogOutButton();
 
         }
     }

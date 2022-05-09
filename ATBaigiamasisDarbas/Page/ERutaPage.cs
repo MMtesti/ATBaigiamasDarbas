@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 
 namespace ATBaigiamasisDarbas.Page
 {
@@ -13,6 +14,7 @@ namespace ATBaigiamasisDarbas.Page
         private IWebElement _submitButton => Driver.FindElement(By.CssSelector("#login_form_modal > div > div > a.reg-btn.fl.btn1.submit-button.a0.mt15 > strong"));
         private IWebElement _actualSuccessLogIn => Driver.FindElement(By.Id("account_on"));
         private IWebElement _alertMessageDismissButton => Driver.FindElement(By.CssSelector("#template_body_col_2_left > div.cc-window.cc-banner.cc-type-info.cc-theme-block.cc-bottom.cc-color-override--575221361 > div > a"));
+        private IWebElement _logoutButton => Driver.FindElement(By.CssSelector("#account_flyout > ul > li.db.dn.pt5.pb5.bn > a"));
         public ERutaPage(IWebDriver webDriver) : base(webDriver) { }
 
         public void NavigateToDefaultPage()
@@ -48,6 +50,13 @@ namespace ATBaigiamasisDarbas.Page
         public void VerifySuccessLogIn(string expectedResult)
         {
             Assert.IsTrue(_actualSuccessLogIn.Text.ToLower().Contains(expectedResult.ToLower()), "Wrong username or password");
+        }
+        public void ClickLogOutButton()
+        {
+            Actions action = new Actions(Driver);
+            action.MoveToElement(_actualSuccessLogIn);
+            action.Build().Perform();
+            _logoutButton.Click();
         }
     }
 }
