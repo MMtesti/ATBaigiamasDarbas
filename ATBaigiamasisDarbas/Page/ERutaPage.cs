@@ -47,7 +47,7 @@ namespace ATBaigiamasisDarbas.Page
         
         public void VerifySuccessLogIn(string expectedResult)
         {
-            Assert.IsTrue(_actualSuccessLogIn.Text.ToLower().Contains(expectedResult), "Wrong username or password");
+            Assert.IsTrue(_actualSuccessLogIn.Text.ToLower().Contains(expectedResult.ToLower()), "Wrong username or password");
         }
     }
 }
