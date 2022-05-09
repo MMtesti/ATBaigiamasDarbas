@@ -59,11 +59,13 @@
     <Compile Include="Drivers\Browsers.cs" />
     <Compile Include="Drivers\CustomDriver.cs" />
     <Compile Include="Page\BasePage.cs" />
+    <Compile Include="Page\ERutaGoodsPage.cs" />
     <Compile Include="Page\ERutaPage.cs" />
     <Compile Include="Page\ERutaSearchPage.cs" />
     <Compile Include="Page\ERutaShoppingCartPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\BaseTest.cs" />
+    <Compile Include="Test\ERutaGoodsTest.cs" />
     <Compile Include="Test\ERutaSearchTest.cs" />
     <Compile Include="Test\ERutaShoppingCartTest.cs" />
     <Compile Include="Test\ERutaTest.cs" />

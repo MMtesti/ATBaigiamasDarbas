@@ -20,6 +20,7 @@ namespace ATBaigiamasisDarbas.Test
         public static ERutaPage _eRutaPage;
         public static ERutaSearchPage _eRutaSearchPage;
         public static ERutaShoppingCartPage _eRutaShoppingCartPage;
+        public static ERutaGoodsPage _eRutaGoodsPage;
 
         [OneTimeSetUp]
         public static void OneTimeSetUp()
@@ -31,6 +32,7 @@ namespace ATBaigiamasisDarbas.Test
             _eRutaPage = new ERutaPage(Driver);
             _eRutaSearchPage = new ERutaSearchPage(Driver);
             _eRutaShoppingCartPage = new ERutaShoppingCartPage(Driver);
+            _eRutaGoodsPage = new ERutaGoodsPage(Driver);
         }
         
         [OneTimeTearDown]
