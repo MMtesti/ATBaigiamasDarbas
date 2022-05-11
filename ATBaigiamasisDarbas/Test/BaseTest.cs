@@ -33,7 +33,7 @@ namespace ATBaigiamasisDarbas.Test
         [OneTimeTearDown]
         public static void OneTimeTearDown()
         {
-            //Driver.Quit();
+            Driver.Quit();
         }
 
         [TearDown]

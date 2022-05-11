@@ -13,7 +13,7 @@ namespace ATBaigiamasisDarbas.Test
 
         {
             _eRutaSearchPage.NavigateToDefaultPage();
-            //_eRutaSearchPage.AcceptAlert();
+            //_eRutaSearchPage.AcceptAlert(); reikia sutvarkyti Alert apejima su try catch.
             _eRutaSearchPage.InsertTextToSerchField(searchText);
             _eRutaSearchPage.ClickSearchSubmitButton();
             _eRutaSearchPage.VerifySearchActualResults(expectedResult);
