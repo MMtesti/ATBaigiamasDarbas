@@ -45,11 +45,13 @@ namespace ATBaigiamasisDarbas.Test
             _eRutaSearchPage.AddItemInToShoppingCart(index);
             Thread.Sleep(3000);
             _eRutaSearchPage.InsertTextToSerchField(searchText);
-            Thread.Sleep(3000);
-            _eRutaSearchPage.ClickSearchSubmitButton();
-            Thread.Sleep(3000);
-            _eRutaSearchPage.AddItemInToShoppingCart(index);
-            _eRutaShoppingCartPage.ClickOnViewShoppingButton();
+          //Thread.Sleep(3000);
+          //_eRutaSearchPage.ClickSearchSubmitButton();
+          //Thread.Sleep(3000);
+          //_eRutaSearchPage.AddItemInToShoppingCart(index);
+          //_eRutaShoppingCartPage.ClickOnViewShoppingButton();
+          //Thread.Sleep(3000);
+          //_eRutaPage.ClickLogOutButton();
         }
         
     }
