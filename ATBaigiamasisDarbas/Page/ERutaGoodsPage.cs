@@ -26,7 +26,7 @@ namespace ATBaigiamasisDarbas.Page
         }
 
         public void MoveToGoodsList()
-            {
+        {
             Actions action = new Actions(Driver);
             action.MoveToElement(_goodsList);
             action.Build().Perform();
@@ -40,7 +40,7 @@ namespace ATBaigiamasisDarbas.Page
         }
         public void VerifyMeniuResult(string expectedResult)
         {
-            Assert.AreEqual($"{expectedResult}", _actualResult.Text.ToLower(), "Wrong selection");
+            Assert.AreEqual($"{expectedResult.ToLower()}", _actualResult.Text.ToLower(), "Wrong selection");
         }
     }
 }

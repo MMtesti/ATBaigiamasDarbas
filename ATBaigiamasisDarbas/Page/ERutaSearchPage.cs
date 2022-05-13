@@ -48,11 +48,11 @@ namespace ATBaigiamasisDarbas.Page
         {
             foreach (IWebElement actualSearchResult in _actualSearchResults)
             {
-                Assert.IsTrue(actualSearchResult.Text.ToLower().Contains(expectedResult), "Goods dont exist");
+                Assert.IsTrue(actualSearchResult.Text.ToLower().Contains(expectedResult.ToLower()), "Goods dont exist");
             }    
         }
         
-        public void AddFirstItemInToShoppingCart(int index)
+        public void AddItemInToShoppingCart(int index)
         {
                 _cartButtons.ElementAt(index).Click();
         }
