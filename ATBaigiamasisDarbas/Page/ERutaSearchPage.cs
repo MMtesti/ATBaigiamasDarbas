@@ -23,8 +23,16 @@ namespace ATBaigiamasisDarbas.Page
         }
         public void AcceptAlert()
         {
+            //if (IsElementPresent(By.CssSelector("#template_body_col_2_left > div.cc-window.cc-banner.cc-type-info.cc-theme-block.cc-bottom.cc-color-override--575221361 > div > a")))
+            //{
                 _alertMessageDismissButton.Click();
+            //}
+            //else
+           // {
+            //    _searchInput.Clear();
+            //}
         }
+
         public void InsertTextToSerchField(string searchText)
         {
             _searchInput.Clear();

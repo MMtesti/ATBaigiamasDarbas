@@ -28,12 +28,13 @@ namespace ATBaigiamasisDarbas.Test
             _eRutaSearchPage = new ERutaSearchPage(Driver);
             _eRutaShoppingCartPage = new ERutaShoppingCartPage(Driver);
             _eRutaGoodsPage = new ERutaGoodsPage(Driver);
+
         }
         
         [OneTimeTearDown]
         public static void OneTimeTearDown()
         {
-           Driver.Quit();
+           //Driver.Quit();
         }
 
         [TearDown]

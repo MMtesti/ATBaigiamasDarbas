@@ -13,6 +13,7 @@ namespace ATBaigiamasisDarbas.Test
 
         {
             _eRutaSearchPage.NavigateToDefaultPage();
+            //_eRutaSearchPage.AcceptAlert();
             _eRutaSearchPage.InsertTextToSerchField(searchText);
             _eRutaSearchPage.ClickSearchSubmitButton();
             _eRutaSearchPage.VerifySearchActualResults(expectedResult);

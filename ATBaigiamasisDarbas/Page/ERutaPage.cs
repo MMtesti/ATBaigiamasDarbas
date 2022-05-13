@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using System;
 
 namespace ATBaigiamasisDarbas.Page
 {
@@ -23,6 +24,7 @@ namespace ATBaigiamasisDarbas.Page
         }
 
         public void AcceptAlert()
+
         {
             _alertMessageDismissButton.Click();
         }

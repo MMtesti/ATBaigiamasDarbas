@@ -10,5 +10,18 @@ namespace ATBaigiamasisDarbas.Page
         {
             Driver = webDriver;
         }
+        //public bool IsElementPresent(By by)
+        //{
+        //    try
+        //    {
+        //        Driver.FindElement(by);
+        //        return true;
+         //   }
+         //   catch (NoSuchElementException)
+          //  {
+           //     return false;
+           // }
+           //}
+     
     }
 }
